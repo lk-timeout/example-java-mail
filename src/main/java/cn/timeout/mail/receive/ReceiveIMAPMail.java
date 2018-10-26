@@ -48,6 +48,16 @@ public class ReceiveIMAPMail {
 		// 获取删除数据，暂未测试，一直0
 		System.out.println("=====" + folder.getDeletedMessageCount());
 
+		/**
+		 * Flag 类型列举如下
+		 * Flags.Flag.ANSWERED 邮件回复标记，标识邮件是否已回复。
+		 * Flags.Flag.DELETED 邮件删除标记，标识邮件是否需要删除。
+		 * Flags.Flag.DRAFT 草稿邮件标记，标识邮件是否为草稿。
+		 * Flags.Flag.FLAGGED 表示邮件是否为回收站中的邮件。
+		 * Flags.Flag.RECENT 新邮件标记，表示邮件是否为新邮件。
+		 * Flags.Flag.SEEN 邮件阅读标记，标识邮件是否已被阅读。
+		 * Flags.Flag.USER 底层系统是否支持用户自定义标记，只读。
+		 */
 		// 增加过滤筛选条件 找出未读邮件
 		FlagTerm ft = new FlagTerm(new Flags(Flags.Flag.SEEN), false); //false代表未读，true代表已读
 //		Message[] messages = folder.getMessages();// 得到邮箱帐户中的所有邮件
